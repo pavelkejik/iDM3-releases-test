@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReleaseNotes Model="EST3" Source="EST3 - Firmware history.txt">
+<ReleaseNotes Model="EST3-HOTEL" Source="EST3-HOTEL - Firmware history.txt">
   <Release Version="02.16.00">
     <Note Lang="en">Optimized control HC4.</Note>
   </Release>

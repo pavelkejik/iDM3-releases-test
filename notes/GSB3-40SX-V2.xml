@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReleaseNotes Model="GCH3-31" Source="GCH3-31 - Firmware history.txt">
-  <Release Version="02.A0.00">
+<ReleaseNotes Model="GSB3-40SX-V2" Source="GSB3-40SX-V2 - Firmware history.txt">
+  <Release Version="02.9E.04">
     <Note Lang="en">Bug fixes and improvements.</Note>
   </Release>
   <Release Version="02.9E.00">
@@ -10,10 +10,10 @@
     <Note Lang="en">optimization of touch detection</Note>
     <Note Lang="en">increased bus interference immunity</Note>
   </Release>
-  <Release Version="01.36.00">
-    <Note Lang="en">Bug fixes and improvements.</Note>
+  <Release Version="01.40.00">
+    <Note Lang="en">optimization of touch detection</Note>
   </Release>
-  <Release Version="01.34.00">
+  <Release Version="01.24.00">
     <Note Lang="en">first version</Note>
   </Release>
 </ReleaseNotes>

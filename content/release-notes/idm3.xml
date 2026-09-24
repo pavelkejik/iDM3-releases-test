@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ReleaseNotes Product="iDM3">
+  <Release Version="3.6.10" Published="2026-09-24" Url="https://github.com/pavelkejik/iDM3-releases-test/releases/download/v3.6.10-rev0/IDM3_3.6.10_Rev0_Setup.exe">
+    <Note>An update keeps the functions and preferences the user created or changed; everything else comes from the new release.</Note>
+  </Release>
   <Release Version="3.6.9" Published="2026-09-24" Url="https://github.com/pavelkejik/iDM3-releases-test/releases/download/v3.6.9-rev0/IDM3_3.6.9_Rev0_Setup.exe">
     <Note>iDM3 now updates itself. The Overview page shows when a new version is available and what changed in every version since yours, and installs it with one click in a few seconds. Projects and settings are kept.</Note>
     <Note>Updates can also be installed automatically whenever iDM3 is closed. The option is on the Overview page and is off by default.</Note>
