@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ReleaseNotes Model="CU3-10M" Source="CU3-10M - Firmware history.txt">
+  <Release Version="02.97.64">
+    <Note Lang="en">repaired switching of bits and relays from iDM</Note>
+    <Note Lang="en">repaired heat/cool area status and a restart in projects with astronomical, mathematical or hotel room modules</Note>
+  </Release>
   <Release Version="02.97.63">
     <Note Lang="en">repaired Modbus-IP (UDP) master and slave data encoding</Note>
     <Note Lang="en">repaired hang at start-up after a factory reset</Note>
@@ -14,7 +18,6 @@
   </Release>
   <Release Version="02.97.50">
     <Note Lang="en">add web state page</Note>
-    <Note Lang="en">DALI control light with OFF function</Note>
   </Release>
   <Release Version="02.97.49">
     <Note Lang="en">add web configuration</Note>

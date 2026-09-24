@@ -1,6 +1,6 @@
-wi7MxN8k8mwCuI/656xREESLPbDZpvyxTxXXNysrW1WU3ptTH8Ds0bSl6H6Kwx00SFLJP5odyJRA5dGQtTJyUrGBuXDsy2O9JXjSsKSjQ6pXXXzSZOWy2kwd1wEZYYTYyZV0CCt4KCFcecRGtpKCCcvhlaHRqel0hmUqG3ZfNM+uViSbPGP5NxalQ9tdKNAVj0QpKJ2py2CkgDmNNQurD3w6hIJe7bnubGBKhTTFVEpSW0IA95LXUYlrJCCPD8cYFdTe0nLaoDrTEReAj6AGC/f3JTQe1W3zCSd6FZLe8q4/DTwnUQFInqQU/Q1Xgo8AMGPemZKlEEkudDcgrKVZVljkm9XE2+hIn9k8VeJZSGGSisvelHZbknbEne6pumJkSmza0vx0DLj5UIVQ4Q/wW9zmJ9X4UIafR9x+RtrLGp+xjKA/GlrlhMz2Ru5OkQrg1r+tSFOUGOSzpPhDg1WB5StsK4of8QSg8tUly3wsoz48mwgsLpgPm2cA9uYbD4JI
+rfSkt9ROFLaI0vo6YN7t0pkxEr6LzIRjYfNi/Wo2D3vDh0Q7o7zfMhYXkDnfAPdoRxjqGXleQMANFWdMJUIMVhpdUfAcJd8yBypq3v/pX/xEla2D7L0nnP1LDgChBLaATqhbzN4gJgyec2624E9++oQPBxaiCovrGd2GLKxvql/DGmOVoHu5kmdTXQLZKjOL75oMjqRjeqId5Evsugf8qsuu7LLH4RBEWiUsvvJASDySdHKpSR5poaltOPLwWwToVZ/1f6RIwvDKmFikMwkauas/2mId2drRDR/5++Rp1lEBQa5dzfWzY9lKjGlg+Eq9TnheG4vNrMyp4OLZtQ/BijfJusCiEgGtD8JcXvjXyYGMile3vsOGK01fdPZXH63B/SZ/GLUwFm3M4dxWoEj+Qrk/HA9W/y0JE6OJihRcWdlKqdSccfDL/9dVUFctZMxGsV13vQrIs6jtjjaiU3jKYU8BztzrK8v0ZIbK2EmP7kVHBWqOIxmrJ/YyVSzYWY7l
 <?xml version="1.0" encoding="utf-8"?>
-<FirmwareCatalog Schema="2" Sequence="26" Generated="2026-09-24T21:34:47Z" ValidUntil="2027-03-23T21:34:47Z">
+<FirmwareCatalog Schema="2" Sequence="27" Generated="2026-09-24T22:32:36Z" ValidUntil="2027-03-23T22:32:36Z">
   <Item Component="Firmwares" Kind="Firmware" Model="A-IBUS-SLAVE" Version="02.08.00" Target="Firmwares\A-IBUS-SLAVE_02.08.00.zip" Source="firmwares/A-IBUS-SLAVE_02.08.00.zip" Size="23017" Sha256="67e27e62eaa67f26bd9e84bfd5935e34f0b708a50915f5e8ccaf5c49706928b6" Channel="Stable">
     <Note Lang="en">Bug fixes and improvements.</Note>
   </Item>
@@ -22,14 +22,13 @@ wi7MxN8k8mwCuI/656xREESLPbDZpvyxTxXXNysrW1WU3ptTH8Ds0bSl6H6Kwx00SFLJP5odyJRA5dGQ
     <Note Lang="en">add status page to web configuration</Note>
   </Item>
   <Item Component="Firmwares" Kind="Firmware" Model="CU3-07M" Version="02.97.59" Target="Firmwares\CU3-07M_02.97.59.zip" Source="firmwares/CU3-07M_02.97.59.zip" Size="187041" Sha256="2bef2e40809960fc49c74de4e535fc7064232a31ce0b8cb8e2178e8736d014e9" Channel="Stable">
-    <Note Lang="en">add DALI-2 multi-master support for input devices</Note>
+    <Note Lang="en">stability improvements</Note>
   </Item>
   <Item Component="Firmwares" Kind="Firmware" Model="CU3-07M" Version="02.97.60" Target="Firmwares\CU3-07M_02.97.60.zip" Source="firmwares/CU3-07M_02.97.60.zip" Size="192766" Sha256="7e89550835869f290fa531e70fedd06d2e7645804d99a58bd00b282032ec9a22" Channel="Stable">
-    <Note Lang="en">DALI-2 input devices: first reliability fixes, completed in 02.97.61</Note>
+    <Note Lang="en">stability improvements</Note>
   </Item>
   <Item Component="Firmwares" Kind="Firmware" Model="CU3-07M" Version="02.97.61" Target="Firmwares\CU3-07M_02.97.61.zip" Source="firmwares/CU3-07M_02.97.61.zip" Size="189647" Sha256="d4b5fe0367c0643ffd0408e32e5283878d0c8e9e4fb51e6e62149f10ab73405a" Channel="Stable">
-    <Note Lang="en">improved DALI-2 reliability (commissioning and bus collisions)</Note>
-    <Note Lang="en">add MQTT support for DALI-2 sensors</Note>
+    <Note Lang="en">stability improvements</Note>
   </Item>
   <Item Component="Firmwares" Kind="Firmware" Model="CU3-07M" Version="02.97.63" Target="Firmwares\CU3-07M_02.97.63.zip" Source="firmwares/CU3-07M_02.97.63.zip" Size="169355" Sha256="030bcaf3e4bd922a8e3ea3874b07e4a55cd3e8f251ea896bf644a4ec25a3f2ed" Channel="Stable">
     <Note Lang="en">repaired Modbus-IP (UDP) master and slave data encoding</Note>
@@ -37,24 +36,31 @@ wi7MxN8k8mwCuI/656xREESLPbDZpvyxTxXXNysrW1WU3ptTH8Ds0bSl6H6Kwx00SFLJP5odyJRA5dGQ
     <Note Lang="en">Modbus: slaves that reject 32-bit (two-register) reads or writes are handled by falling back to single-register requests</Note>
     <Note Lang="en">network reliability fixes</Note>
   </Item>
+  <Item Component="Firmwares" Kind="Firmware" Model="CU3-07M" Version="02.97.64" Target="Firmwares\CU3-07M_02.97.64.zip" Source="firmwares/CU3-07M_02.97.64.zip" Size="169257" Sha256="d76583a1c7da58983e75755904d9705bb2c189caee75f792de10ae6e7fa08da1" Channel="Stable" MinAppVersion="3.6.10" MinRev="1">
+    <Note Lang="en">repaired switching of bits and relays from iDM</Note>
+    <Note Lang="en">repaired heat/cool area status and a restart in projects with astronomical, mathematical or hotel room modules</Note>
+  </Item>
   <Item Component="Firmwares" Kind="Firmware" Model="CU3-08M" Version="02.97.56" Target="Firmwares\CU3-08M_02.97.56.zip" Source="firmwares/CU3-08M_02.97.56.zip" Size="189933" Sha256="4592ec63a604b3d3b8eb3bf512412f9d3103ee1dfe7804d20f3e65d82c602c0f" Channel="Stable">
     <Note Lang="en">add status page to web configuration</Note>
   </Item>
   <Item Component="Firmwares" Kind="Firmware" Model="CU3-08M" Version="02.97.59" Target="Firmwares\CU3-08M_02.97.59.zip" Source="firmwares/CU3-08M_02.97.59.zip" Size="187042" Sha256="4ce7bd92bb081fdbade52a9fa32b6234a2e5b58a5b87f77346073ba9ba6acdcc" Channel="Stable">
-    <Note Lang="en">add DALI-2 multi-master support for input devices</Note>
+    <Note Lang="en">stability improvements</Note>
   </Item>
   <Item Component="Firmwares" Kind="Firmware" Model="CU3-08M" Version="02.97.60" Target="Firmwares\CU3-08M_02.97.60.zip" Source="firmwares/CU3-08M_02.97.60.zip" Size="192767" Sha256="237becc632d6cdfe73e0c386bebc84cdaae0eb1dd2c9fbae1e5b0a7441ef1552" Channel="Stable">
-    <Note Lang="en">DALI-2 input devices: first reliability fixes, completed in 02.97.61</Note>
+    <Note Lang="en">stability improvements</Note>
   </Item>
   <Item Component="Firmwares" Kind="Firmware" Model="CU3-08M" Version="02.97.61" Target="Firmwares\CU3-08M_02.97.61.zip" Source="firmwares/CU3-08M_02.97.61.zip" Size="189647" Sha256="d88c7e7fd55bedc0ce32460fc9c9360e87150eb8bee1d9baa002c4063f4a8733" Channel="Stable">
-    <Note Lang="en">improved DALI-2 reliability (commissioning and bus collisions)</Note>
-    <Note Lang="en">add MQTT support for DALI-2 sensors</Note>
+    <Note Lang="en">stability improvements</Note>
   </Item>
   <Item Component="Firmwares" Kind="Firmware" Model="CU3-08M" Version="02.97.63" Target="Firmwares\CU3-08M_02.97.63.zip" Source="firmwares/CU3-08M_02.97.63.zip" Size="169356" Sha256="e3d1027a349dbbc501b387ae0d104fce38b7bac11e1e0c3e7e59cdcdccedf241" Channel="Stable">
     <Note Lang="en">repaired Modbus-IP (UDP) master and slave data encoding</Note>
     <Note Lang="en">repaired hang at start-up after a factory reset</Note>
     <Note Lang="en">Modbus: slaves that reject 32-bit (two-register) reads or writes are handled by falling back to single-register requests</Note>
     <Note Lang="en">network reliability fixes</Note>
+  </Item>
+  <Item Component="Firmwares" Kind="Firmware" Model="CU3-08M" Version="02.97.64" Target="Firmwares\CU3-08M_02.97.64.zip" Source="firmwares/CU3-08M_02.97.64.zip" Size="169258" Sha256="655b5142647119f4ffc6765a1f0cd5a787ec711e81c52fe93b5de7ea88efa09d" Channel="Stable" MinAppVersion="3.6.10" MinRev="1">
+    <Note Lang="en">repaired switching of bits and relays from iDM</Note>
+    <Note Lang="en">repaired heat/cool area status and a restart in projects with astronomical, mathematical or hotel room modules</Note>
   </Item>
   <Item Component="Firmwares" Kind="Firmware" Model="CU3-09M" Version="02.97.56" Target="Firmwares\CU3-09M_02.97.56.zip" Source="firmwares/CU3-09M_02.97.56.zip" Size="165294" Sha256="724c0f8acd6530588269e1dee0a9abf7ea5d1e67c4f8c1c486816a8e439e2c54" Channel="Stable">
     <Note Lang="en">add status page to web configuration</Note>
@@ -83,6 +89,10 @@ wi7MxN8k8mwCuI/656xREESLPbDZpvyxTxXXNysrW1WU3ptTH8Ds0bSl6H6Kwx00SFLJP5odyJRA5dGQ
     <Note Lang="en">Modbus: slaves that reject 32-bit (two-register) reads or writes are handled by falling back to single-register requests</Note>
     <Note Lang="en">network reliability fixes</Note>
   </Item>
+  <Item Component="Firmwares" Kind="Firmware" Model="CU3-09M" Version="02.97.64" Target="Firmwares\CU3-09M_02.97.64.zip" Source="firmwares/CU3-09M_02.97.64.zip" Size="169258" Sha256="9a24567449b21ca64b048d794bc937454456b09b4b39d05c53dbbd70d2b55e55" Channel="Stable" MinAppVersion="3.6.10" MinRev="1">
+    <Note Lang="en">repaired switching of bits and relays from iDM</Note>
+    <Note Lang="en">repaired heat/cool area status and a restart in projects with astronomical, mathematical or hotel room modules</Note>
+  </Item>
   <Item Component="Firmwares" Kind="Firmware" Model="CU3-10M" Version="02.97.56" Target="Firmwares\CU3-10M_02.97.56.zip" Source="firmwares/CU3-10M_02.97.56.zip" Size="165297" Sha256="192928c39d8349ecde7e5dbd258cdf94881a3e33402be99acc0fbe43352f9e17" Channel="Stable">
     <Note Lang="en">add status page to web configuration</Note>
   </Item>
@@ -91,6 +101,10 @@ wi7MxN8k8mwCuI/656xREESLPbDZpvyxTxXXNysrW1WU3ptTH8Ds0bSl6H6Kwx00SFLJP5odyJRA5dGQ
     <Note Lang="en">repaired hang at start-up after a factory reset</Note>
     <Note Lang="en">Modbus: slaves that reject 32-bit (two-register) reads or writes are handled by falling back to single-register requests</Note>
     <Note Lang="en">network reliability fixes</Note>
+  </Item>
+  <Item Component="Firmwares" Kind="Firmware" Model="CU3-10M" Version="02.97.64" Target="Firmwares\CU3-10M_02.97.64.zip" Source="firmwares/CU3-10M_02.97.64.zip" Size="169266" Sha256="b6ac641a1bc8756ab179aa8faebe94e0235ce33fbbc661c48f671e2e1c340a15" Channel="Stable" MinAppVersion="3.6.10" MinRev="1">
+    <Note Lang="en">repaired switching of bits and relays from iDM</Note>
+    <Note Lang="en">repaired heat/cool area status and a restart in projects with astronomical, mathematical or hotel room modules</Note>
   </Item>
   <Item Component="Firmwares" Kind="Firmware" Model="DA3-03M-RGBW" Version="02.00.00" Target="Firmwares\DA3-03M-RGBW_02.00.00.zip" Source="firmwares/DA3-03M-RGBW_02.00.00.zip" Size="22451" Sha256="9a0f3c387f84e318309927d777377ce12064545eedf1636d920cd55554925a24" Channel="Stable">
     <Note Lang="en">Bug fixes and improvements.</Note>
@@ -525,7 +539,25 @@ wi7MxN8k8mwCuI/656xREESLPbDZpvyxTxXXNysrW1WU3ptTH8Ds0bSl6H6Kwx00SFLJP5odyJRA5dGQ
     <Note Lang="en">Bug fixes and improvements.</Note>
   </Item>
   <Item Component="Root" Kind="Content" Model="announcements.xml" Version="3.6.10" Target="announcements.xml" Source="content/announcements.xml" Size="1476" Sha256="f40c66546b48bebb7640e4ff8265b0e70120026359d99834c329678ad55b6a20" Channel="Stable" />
-  <Item Component="release-notes" Kind="Content" Model="release-notes/idm3.xml" Version="3.6.10" Target="release-notes\idm3.xml" Source="content/release-notes/idm3.xml" Size="5461" Sha256="373bca508f43864008a348e8f233ed8bd8b4e56ac27217cbbded3ce93924269a" Channel="Stable" />
+  <Item Component="release-notes" Kind="Content" Model="release-notes/idm3.xml" Version="3.6.10" Target="release-notes\idm3.xml" Source="content/release-notes/idm3.xml" Size="6445" Sha256="731a6433dc1e91e8b4b21234c68ac21b06b3013bd264a1dda85f2361cb0dfda2" Channel="Stable" />
+  <Release Version="3.6.10" Rev="1" Channel="Stable" Published="2026-09-24" Installer="https://github.com/pavelkejik/iDM3-releases-test/releases/download/v3.6.10-rev1/IDM3_3.6.10_Rev1_Setup.exe" Size="18485107" Sha256="e8cc4bceb5ae667d71572393009d7fa1e5ca9ec1bff3c7284ea237dc8679238c">
+    <Firmware Model="CU3-07M" Version="02.97.64">
+      <Note>repaired switching of bits and relays from iDM</Note>
+      <Note>repaired heat/cool area status and a restart in projects with astronomical, mathematical or hotel room modules</Note>
+    </Firmware>
+    <Firmware Model="CU3-08M" Version="02.97.64">
+      <Note>repaired switching of bits and relays from iDM</Note>
+      <Note>repaired heat/cool area status and a restart in projects with astronomical, mathematical or hotel room modules</Note>
+    </Firmware>
+    <Firmware Model="CU3-09M" Version="02.97.64">
+      <Note>repaired switching of bits and relays from iDM</Note>
+      <Note>repaired heat/cool area status and a restart in projects with astronomical, mathematical or hotel room modules</Note>
+    </Firmware>
+    <Firmware Model="CU3-10M" Version="02.97.64">
+      <Note>repaired switching of bits and relays from iDM</Note>
+      <Note>repaired heat/cool area status and a restart in projects with astronomical, mathematical or hotel room modules</Note>
+    </Firmware>
+  </Release>
   <Release Version="3.6.10" Rev="0" Channel="Stable" Published="2026-09-24" Installer="https://github.com/pavelkejik/iDM3-releases-test/releases/download/v3.6.10-rev0/IDM3_3.6.10_Rev0_Setup.exe" Size="18485351" Sha256="fbed79e58d841ae0f8d1879b6ffff484e4fadb5de595c8d9ceaad5d7786f60bd">
     <Note>An update keeps the functions and preferences the user created or changed; everything else comes from the new release.</Note>
   </Release>
