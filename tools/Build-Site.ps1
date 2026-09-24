@@ -3,14 +3,12 @@
     Generates the public site from the catalogue.
 
 .DESCRIPTION
-    The site is derived, never hand-written. catalog.xml is the single source of truth,
-    so the page a partner reads and the feed iDM3 reads cannot disagree.
+    Everything comes from catalog.xml.
 
-    Produces:
-        index.html              overview - latest firmware, counts, how to get it
-        firmware/index.html     every model, with its published versions
-        firmware/<MODEL>.html   one page per model, full version history
-        compatibility.html      the recommended minimum versions matrix
+        index.html              latest firmware per model
+        firmware/index.html     all models
+        firmware/<MODEL>.html   version history of one model
+        compatibility.html      recommended minimum versions
         feed.xml                Atom feed of published firmware
 
 .PARAMETER OutputPath
@@ -33,7 +31,7 @@ if ([string]::IsNullOrWhiteSpace($OutputPath)) {
 }
 
 if (-not (Test-Path -LiteralPath $catalogPath)) {
-    throw "catalog.xml not found. Run Build-Catalog.ps1 first."
+    throw "catalog.xml not found."
 }
 
 $catalog = New-Object System.Xml.XmlDocument
@@ -41,7 +39,6 @@ $catalog.Load($catalogPath)
 
 $items = @($catalog.FirmwareCatalog.Item | Where-Object { $null -ne $_ })
 $flashable = @($items | Where-Object { $_.Kind -eq 'Firmware' })
-$sequence = $catalog.FirmwareCatalog.Sequence
 $generated = $catalog.FirmwareCatalog.Generated
 
 # --- helpers ---------------------------------------------------------------------------
@@ -111,8 +108,7 @@ function New-Page {
 $Body
 </main>
 <footer><div class="wrap">
-Generated from <code>catalog.xml</code> sequence $sequence on $generated.
-Every archive is covered by a SHA-256 digest in the catalogue.
+ELKO EP, s.r.o. &middot; Updated $(($generated -split 'T')[0])
 </div></footer>
 </body></html>
 "@
@@ -185,39 +181,19 @@ foreach ($group in ($models | Sort-Object Name)) {
     $latestRows += "<tr><td><a href=`"firmware/$(Get-Escaped $group.Name).html`">$(Get-Escaped $group.Name)</a></td><td class=`"mono`">$(Get-Escaped $newest.Version)</td></tr>"
 }
 
-$definitionCount  = @($items | Where-Object { $_.Kind -eq 'Definition' }).Count
-$placeholderCount = @($items | Where-Object { $_.Kind -eq 'Placeholder' }).Count
 
 $overviewBody = @"
 <div class="tiles">
   <div class="tile"><b>$($flashable.Count)</b><span>Firmware archives</span></div>
   <div class="tile"><b>$($models.Count)</b><span>Device models</span></div>
-  <div class="tile"><b>$sequence</b><span>Catalogue sequence</span></div>
 </div>
 
 <h2>Getting firmware</h2>
-<p>iDM3 downloads firmware from this repository automatically. Open the firmware manager,
-check for updates, and the versions published here appear alongside the ones already
-installed. Downloading before going on site is recommended - connectivity in plant rooms
-is unreliable.</p>
-<p>Every archive is covered by a SHA-256 digest inside <code>catalog.xml</code>, and iDM3
-rejects an archive whose digest does not match, so a corrupted or substituted file is not
-installed. iDM3 validates the HTTPS certificate of this host itself rather than relying on
-whatever the machine happens to trust.</p>
-<p>The catalogue is not signed. Authenticity rests on HTTPS and on who can publish here -
-the same boundary firmware has always had, since the iDM3 installer is built from the same
-source. It carries data only: files iDM3 reads, never executables it runs.</p>
+<p>iDM3 downloads firmware from here by itself and checks every file before it is used.
+Missing firmware can also be downloaded in advance on the Overview page of iDM3.</p>
 
 <h2>Latest version per model</h2>
 <table><thead><tr><th>Model</th><th>Latest</th></tr></thead><tbody>$latestRows</tbody></table>
-
-<h2>What else is in the catalogue</h2>
-<p class="sub">Not every entry is flashable firmware. iDM3 only ever offers the first kind.</p>
-<table><thead><tr><th>Kind</th><th>Count</th><th>What it is</th></tr></thead><tbody>
-<tr><td class="mono">Firmware</td><td class="mono">$($flashable.Count)</td><td>Carries a <code>.if3</code> or <code>.nf3</code> image</td></tr>
-<tr><td class="mono">Definition</td><td class="mono">$definitionCount</td><td>Only <code>unit.xml</code> - a device model, nothing to flash</td></tr>
-<tr><td class="mono">Placeholder</td><td class="mono">$placeholderCount</td><td>Empty archive for a virtual module inside the central unit</td></tr>
-</tbody></table>
 "@
 [System.IO.File]::WriteAllText((Join-Path $OutputPath 'index.html'),
     (New-Page -Title $SiteTitle -Body $overviewBody), $utf8)
@@ -229,16 +205,14 @@ if (Test-Path -LiteralPath $compatPath) {
     $raw = Get-Content -LiteralPath $compatPath -Raw
     $compatBody = @"
 <h2>Recommended minimum versions</h2>
-<p class="sub">The combination ELKO EP tests and supports. Running below these is not recommended.</p>
+<p class="sub">Versions tested and supported by ELKO EP.</p>
 <pre style="background:var(--card);border:1px solid var(--line);border-radius:6px;padding:16px;overflow-x:auto"><code>$(Get-Escaped $raw)</code></pre>
 "@
 }
 else {
     $compatBody = @"
 <h2>Recommended minimum versions</h2>
-<div class="warn">The compatibility matrix has not been published yet. Add
-<code>compatibility.txt</code> to the repository - the content is maintained in
-<code>Recommended minimal firmware version.txt</code>, which ships inside iDM3.</div>
+<p class="sub">Not published yet.</p>
 "@
 }
 [System.IO.File]::WriteAllText((Join-Path $OutputPath 'compatibility.html'),

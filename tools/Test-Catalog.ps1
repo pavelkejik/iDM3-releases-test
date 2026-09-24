@@ -1,25 +1,18 @@
 ﻿<#
 .SYNOPSIS
-    Verifies catalog.xml the way iDM3 will verify it.
+    Checks that catalog.xml matches the files in the repository.
 
 .DESCRIPTION
-    Checks, in the order the client performs them:
-
-      1. Every Item's archive exists and its SHA-256 matches the catalogue.
-      2. Any MinAppVersion is a version iDM3 can compare.
-      3. No Item carries executable content.
+      1. Every item's file exists and its SHA-256 matches.
+      2. MinAppVersion values are valid versions.
+      3. No item contains executables.
       4. ValidUntil has not passed.
-      5. Sequence has not gone backwards relative to -PreviousSequence.
+      5. Sequence is not lower than -PreviousSequence.
 
-    Run it before publishing, and in CI on every pull request.
-
-    The catalogue is not signed, so this does not establish who produced it - only that
-    it is internally consistent and that every archive it lists is intact. Authenticity
-    rests on HTTPS to the repository host and on who can push to it. See README.md.
+    The signature is checked by the release workflow in iDM-3.5.xx.
 
 .PARAMETER PreviousSequence
-    The Sequence of the currently published catalogue. Supplying it catches a rollback,
-    where an older catalogue is republished to steer clients onto a withdrawn firmware.
+    Sequence of the currently published catalogue.
 #>
 [CmdletBinding()]
 param(
@@ -29,25 +22,20 @@ param(
 $ErrorActionPreference = 'Stop'
 Add-Type -AssemblyName System.IO.Compression.FileSystem
 
-# Files iDM3 would load or launch rather than read. The catalogue is unsigned, so an
-# executable delivered through it turns a stolen repository token into code execution on
-# every engineer's machine. Anything on this list belongs in the installer instead.
+# Executables are only delivered in the installer, never through the catalogue.
 $executableExtensions = @('.exe', '.dll', '.com', '.bat', '.cmd', '.ps1', '.msi', '.scr', '.vbs', '.js')
 
 $repoRoot      = Split-Path -Parent $PSScriptRoot
 $catalogPath   = Join-Path $repoRoot 'catalog.xml'
 
 if (-not (Test-Path -LiteralPath $catalogPath)) {
-    throw "catalog.xml not found. Run Build-Catalog.ps1 first."
+    throw "catalog.xml not found."
 }
 
 $errors   = New-Object System.Collections.Generic.List[string]
 $warnings = New-Object System.Collections.Generic.List[string]
 
-# A corrupted catalogue is exactly what this tool exists to catch, so report it rather
-# than letting the parser throw a wall of the malformed document. XmlDocument.Load is
-# used instead of the [xml] cast because the cast's exception message embeds the entire
-# file, which is useless output when the file is 56 KB.
+# XmlDocument.Load rather than [xml], whose error message contains the whole file.
 $catalog = New-Object System.Xml.XmlDocument
 try {
     $catalog.Load($catalogPath)
@@ -108,8 +96,7 @@ try {
 }
 finally { $sha.Dispose() }
 
-# Anything on disk the catalogue does not list is unpublished, and clients will never
-# offer it - worth reporting so it is not mistaken for a release.
+# Files not listed in the catalogue are never offered.
 $listed = @{}
 foreach ($item in @($catalog.FirmwareCatalog.Item)) {
     if ($null -ne $item) { $listed[[System.IO.Path]::GetFileName($item.Source)] = $true }
@@ -120,10 +107,7 @@ foreach ($onDisk in Get-ChildItem -LiteralPath (Join-Path $repoRoot 'firmwares')
     }
 }
 
-# An unlisted content file is an error rather than a warning: it was published
-# deliberately and does nothing, which is worse than not publishing it at all. This is
-# the check that would have caught .config-overlay being skipped because a leading dot
-# makes a directory hidden on Linux. -Force for the same reason.
+# An unlisted file in content/ is an error. -Force includes hidden folders.
 $contentDir = Join-Path $repoRoot 'content'
 if (Test-Path -LiteralPath $contentDir) {
     $contentRoot = (Resolve-Path -LiteralPath $contentDir).Path.TrimEnd([System.IO.Path]::DirectorySeparatorChar)
@@ -144,15 +128,11 @@ if (Test-Path -LiteralPath $contentDir) {
 }
 
 # --- 2. Version floors ------------------------------------------------------------------------
-# An unparseable MinAppVersion is worse than none: iDM3 cannot compare it, so it either
-# skips content it should apply or applies content it should not.
 foreach ($item in @($catalog.FirmwareCatalog.Item)) {
     if ($null -eq $item) { continue }
 
     $floor = $item.GetAttribute('MinAppVersion')
     if ([string]::IsNullOrWhiteSpace($floor)) {
-        # Firmware must reach installations older than the release that published it,
-        # so a missing floor is correct there and merely unremarkable elsewhere.
         continue
     }
 
@@ -160,20 +140,13 @@ foreach ($item in @($catalog.FirmwareCatalog.Item)) {
     if (-not [Version]::TryParse($floor, [ref]$parsed)) {
         $errors.Add("$($item.Source): MinAppVersion '$floor' is not a version iDM3 can compare.")
     }
-    elseif ($item.Component -eq 'Firmwares') {
-        $warnings.Add("$($item.Source): firmware carries MinAppVersion $floor, so installations older than that will not be offered it. Intended?")
-    }
 }
 
 # --- 3. Executable content ------------------------------------------------------------------
-# The catalogue carries content only: files that are read, never executed. This is the one
-# check that cannot be recovered after the fact - by the time a bad archive has been fetched
-# and unpacked, the machine has already run it.
 foreach ($item in @($catalog.FirmwareCatalog.Item)) {
     if ($null -eq $item) { continue }
 
-    # Target and Source normally share an extension; reported once either way, because two
-    # lines about one file reads as two problems.
+    # Reported once even if both Target and Source match.
     foreach ($path in @($item.Target, $item.Source)) {
         if ([string]::IsNullOrWhiteSpace($path)) { continue }
         $extension = [System.IO.Path]::GetExtension($path).ToLowerInvariant()
@@ -187,11 +160,9 @@ foreach ($item in @($catalog.FirmwareCatalog.Item)) {
     $full   = Join-Path $repoRoot $source
     if (-not (Test-Path -LiteralPath $full)) { continue }
 
-    # Content under content/ is delivered as the file itself, so its own extension - checked
-    # above - is the whole story. Only archives have entries to look inside.
+    # Only archives have entries to check.
     if ([System.IO.Path]::GetExtension($full).ToLowerInvariant() -ne '.zip') { continue }
 
-    # An archive is unpacked into the installation, so its entries matter as much as its name.
     $archive = $null
     try {
         $archive = [System.IO.Compression.ZipFile]::OpenRead($full)
@@ -230,7 +201,7 @@ Write-Output "Catalogue        : $catalogPath"
 Write-Output "Sequence         : $sequence"
 Write-Output "Valid until      : $($catalog.FirmwareCatalog.ValidUntil)"
 Write-Output "Items verified   : $checked"
-Write-Output "Signature        : none - the catalogue is unsigned by design, see README.md"
+Write-Output "Signature        : $(if (Test-Path -LiteralPath (Join-Path $repoRoot 'catalog.bundle')) { 'catalog.bundle present' } else { 'missing' })"
 Write-Output ""
 
 foreach ($w in $warnings) { Write-Warning $w }

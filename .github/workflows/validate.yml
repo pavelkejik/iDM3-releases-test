@@ -1,6 +1,6 @@
 ﻿name: Validate
 
-# The catalogue reaches every iDM3 installation at once, so nothing merges unvalidated.
+# Checks firmware names, the catalogue and that no keys were committed.
 on:
   pull_request:
   push:
@@ -25,8 +25,7 @@ jobs:
     name: Catalogue and digests
     runs-on: windows-latest
     steps:
-      # Two commits, so the published Sequence can be read from the previous state
-      # and a rollback caught before it merges.
+      # Two commits, to compare Sequence with the previous catalogue.
       - uses: actions/checkout@v5
         with:
           fetch-depth: 2
@@ -35,15 +34,12 @@ jobs:
         id: published
         shell: pwsh
         run: |
-          # git reports "no such ref" and "no difference" through the exit code, and both
-          # are expected answers here rather than failures.
+          # git reports "no such ref" and "no difference" through the exit code.
           $PSNativeCommandUseErrorActionPreference = $false
 
           $previous = 0
 
           if ($env:GITHUB_EVENT_NAME -eq 'pull_request') {
-            # The PR checkout is a merge commit whose first parent is the base tip, but the
-            # base is fetched by name rather than relying on that.
             git fetch --no-tags --depth=1 origin $env:GITHUB_BASE_REF 2>&1 | Out-Null
             $ref = 'FETCH_HEAD'
           }
@@ -57,9 +53,6 @@ jobs:
             Write-Output "::warning::$ref is unavailable, so the rollback check is skipped."
           }
           elseif ([string]::IsNullOrWhiteSpace((git diff --name-only $resolved HEAD -- catalog.xml))) {
-            # The catalogue itself did not change, so Sequence is meant to stay where it is
-            # and there is nothing to roll back to. Commits that touch only tooling, notes
-            # or documentation land here.
             Write-Output "catalog.xml is unchanged; Sequence is expected to hold at its current value."
           }
           else {
@@ -87,8 +80,7 @@ jobs:
         run: .\tools\Test-Catalog.ps1 -PreviousSequence ${{ steps.published.outputs.sequence }}
 
   secrets:
-    # Nothing here is signed, so this guards against a mistake rather than enforcing a
-    # process. The repository is public: a credential committed is a credential published.
+    # The repository is public.
     name: No private key material
     runs-on: ubuntu-latest
     steps:

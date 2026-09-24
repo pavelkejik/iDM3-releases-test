@@ -1,7 +1,5 @@
 # Notice and terms of use
 
-**DRAFT - requires review by ELKO EP legal before this repository is made public.**
-
 Copyright (c) ELKO EP s.r.o. All rights reserved.
 
 ## Firmware

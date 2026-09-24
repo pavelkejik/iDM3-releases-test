@@ -1,28 +1,14 @@
 <#
 .SYNOPSIS
-    Validates the contents of firmwares/ before it can be published.
+    Checks the archives in firmwares/.
 
 .DESCRIPTION
-    Every archive must be named exactly as iDM3 expects, because a downloaded file drops
-    straight into the tool's Firmwares folder and is matched by name:
+    - names are MODEL_MM.mm.pp.zip (hex version, e.g. GCH3-31_02.A0.00.zip), as iDM3 expects
+    - no model/version twice
+    - every archive opens
 
-        MODEL_MM.mm.pp.zip      version in hexadecimal, e.g. GCH3-31_02.A0.00.zip
-
-    Checks performed:
-      - file name matches the pattern iDM3 parses
-      - no model/version published twice
-      - the archive opens
-
-    Archives are also classified, because Firmwares/ holds three different things:
-
-      Firmware    contains a .if3 or .nf3 image - flashable onto a device
-      Definition  contains only unit.xml - a device model, with nothing to flash
-      Placeholder an empty archive - a virtual module implemented inside the central unit
-
-    Only Firmware entries may be offered to a technician as an update. The catalogue
-    records the kind so iDM3 can tell them apart.
-
-    Exits non-zero on any error, so it can gate a pull request.
+    Kinds: Firmware (.if3/.nf3 image), Definition (only unit.xml), Placeholder (empty,
+    virtual module in the CU). Exits non-zero on errors.
 
 .PARAMETER Path
     Firmware directory. Defaults to firmwares/ next to this script's repository root.
