@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FirmwareCatalog Schema="2" Sequence="23" Generated="2026-09-24T11:20:41Z" ValidUntil="2027-03-23T11:20:41Z">
+<FirmwareCatalog Schema="2" Sequence="24" Generated="2026-09-24T12:17:42Z" ValidUntil="2027-03-23T12:17:42Z">
   <Item Component="Firmwares" Kind="Firmware" Model="A-IBUS-SLAVE" Version="02.08.00" Target="Firmwares\A-IBUS-SLAVE_02.08.00.zip" Source="firmwares/A-IBUS-SLAVE_02.08.00.zip" Size="23017" Sha256="67e27e62eaa67f26bd9e84bfd5935e34f0b708a50915f5e8ccaf5c49706928b6" Channel="Stable" />
   <Item Component="Firmwares" Kind="Firmware" Model="ADC3-60M" Version="01.3A.00" Target="Firmwares\ADC3-60M_01.3A.00.zip" Source="firmwares/ADC3-60M_01.3A.00.zip" Size="81044" Sha256="20373441e2f568c7d96eeedbf4f59e6015f70ed2eca51ddf21d299d62b065a05" Channel="Stable">
     <Note Lang="en">first version</Note>
@@ -431,8 +431,21 @@
   </Item>
   <Item Component="Firmwares" Kind="Firmware" Model="WSB3-40-HUM" Version="02.83.00" Target="Firmwares\WSB3-40-HUM_02.83.00.zip" Source="firmwares/WSB3-40-HUM_02.83.00.zip" Size="22028" Sha256="7847e19566fc5a19ce72b42d91e74fb90525e9da46c67ff9c1908311d8a76ccd" Channel="Stable" />
   <Item Component="Firmwares" Kind="Firmware" Model="WSB3-40-HUM" Version="04.02.00" Target="Firmwares\WSB3-40-HUM_04.02.00.zip" Source="firmwares/WSB3-40-HUM_04.02.00.zip" Size="22118" Sha256="0a958fe4f34eeb07b51da3e8b5468c71b4f6cc100cefa3d62600f2f7e2582da1" Channel="Stable" />
-  <Item Component="Root" Kind="Content" Model="announcements.xml" Version="3.6.8" Target="announcements.xml" Source="content/announcements.xml" Size="2133" Sha256="ad22b58f4a57673efccb244d60c3aed2dd751e91ca2974fb51851478efdfdf75" Channel="Stable" />
-  <Item Component="release-notes" Kind="Content" Model="release-notes/idm3.xml" Version="3.6.8" Target="release-notes\idm3.xml" Source="content/release-notes/idm3.xml" Size="4834" Sha256="a911ecf97411e6dabe487a3fd940e4a3e45c26c7ef341c4692a0b711cb66db35" Channel="Stable" />
+  <Item Component="Root" Kind="Content" Model="announcements.xml" Version="3.6.9" Target="announcements.xml" Source="content/announcements.xml" Size="2133" Sha256="ad22b58f4a57673efccb244d60c3aed2dd751e91ca2974fb51851478efdfdf75" Channel="Stable" />
+  <Item Component="release-notes" Kind="Content" Model="release-notes/idm3.xml" Version="3.6.9" Target="release-notes\idm3.xml" Source="content/release-notes/idm3.xml" Size="5147" Sha256="d6ec2ba559c304d8dd02b0721281d1c4cae0f9d2310bd832f18e69f4e1cff61a" Channel="Stable" />
+  <Release Version="3.6.9" Rev="0" Channel="Stable" Published="2026-09-24" Installer="https://github.com/pavelkejik/iDM3-releases-test/releases/download/v3.6.9-rev0/IDM3_3.6.9_Rev0_Setup.exe" Size="18482810" Sha256="8da80782af31b514c7daca59a9374ed8bef54f4d5eab66f4a54196a460eff932">
+    <Note>iDM3 now updates itself. The Overview page shows when a new version is available and what changed in every version since yours, and installs it with one click in a few seconds. Projects and settings are kept.</Note>
+    <Note>Updates can also be installed automatically whenever iDM3 is closed. The option is on the Overview page and is off by default.</Note>
+    <Note>iDM3 opens on a new Overview page: news from ELKO EP, the installed version and update status, release notes for iDM3 and for device firmware, and a link to the user manual.</Note>
+    <Note>Device firmware published by ELKO EP can be downloaded from the Overview page, and every file is checked before it is used.</Note>
+    <Note>Added the IBWL3-02B and IBWL3-20B relays.</Note>
+    <Note>Added support for DALI-2 input devices.</Note>
+    <Note>CU error codes are shown with a readable description.</Note>
+    <Note>New installations no longer show hidden objects, save function block templates in the project, and start new projects from the default project.</Note>
+    <Note>The "Auto restore project at the CU" setting was removed: miniCU does not support it.</Note>
+    <Note>The hotel system (HRS / Reception) is no longer part of iDM3.</Note>
+    <Note>New installations go to a folder named iDM3, without a version number; an existing installation is updated in place.</Note>
+  </Release>
   <Release Version="3.6.8" Rev="0" Channel="Stable" Published="2026-09-24" Installer="https://github.com/pavelkejik/iDM3-releases-test/releases/download/v3.6.8-rev0/IDM3_3.6.8_Rev0_Setup.exe" Size="18482743" Sha256="4d9b223c0c714916a8226f4c4fce5b5a153d5171532a0d947480f92518a3519d">
     <Note>The update catalogue and its signature are read from one file, so they always match, even in the minutes right after a release is published.</Note>
     <Note>New firmware is offered from the release that brings it, together with the definitions it needs; older installations are offered the update of iDM3 instead.</Note>

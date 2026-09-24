@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ReleaseNotes Product="iDM3">
+  <Release Version="3.6.9" Published="2026-09-24" Url="https://github.com/pavelkejik/iDM3-releases-test/releases/download/v3.6.9-rev0/IDM3_3.6.9_Rev0_Setup.exe">
+    <Note>iDM3 now updates itself. The Overview page shows when a new version is available and what changed in every version since yours, and installs it with one click in a few seconds. Projects and settings are kept.</Note>
+    <Note>Updates can also be installed automatically whenever iDM3 is closed. The option is on the Overview page and is off by default.</Note>
+    <Note>iDM3 opens on a new Overview page: news from ELKO EP, the installed version and update status, release notes for iDM3 and for device firmware, and a link to the user manual.</Note>
+    <Note>Device firmware published by ELKO EP can be downloaded from the Overview page, and every file is checked before it is used.</Note>
+    <Note>Added the IBWL3-02B and IBWL3-20B relays.</Note>
+    <Note>Added support for DALI-2 input devices.</Note>
+    <Note>CU error codes are shown with a readable description.</Note>
+    <Note>New installations no longer show hidden objects, save function block templates in the project, and start new projects from the default project.</Note>
+    <Note>The "Auto restore project at the CU" setting was removed: miniCU does not support it.</Note>
+    <Note>The hotel system (HRS / Reception) is no longer part of iDM3.</Note>
+    <Note>New installations go to a folder named iDM3, without a version number; an existing installation is updated in place.</Note>
+  </Release>
   <Release Version="3.6.8" Published="2026-09-24" Url="https://github.com/pavelkejik/iDM3-releases-test/releases/download/v3.6.8-rev0/IDM3_3.6.8_Rev0_Setup.exe">
     <Note>The update catalogue and its signature are read from one file, so they always match, even in the minutes right after a release is published.</Note>
     <Note>New firmware is offered from the release that brings it, together with the definitions it needs; older installations are offered the update of iDM3 instead.</Note>
@@ -33,24 +46,5 @@
   </Release>
   <Release Version="3.6.6" Published="2026-09-18">
     <Note>The Overview page says when a newer version of iDM3 has been published.</Note>
-  </Release>
-  <Release Version="3.6.5" Published="2026-09-18">
-    <Note>Announcements and release notes are published, so they can be updated without a new version of iDM3.</Note>
-    <Note>The Overview page shows release notes for iDM3 and for the published firmware.</Note>
-    <Note>The version is shown as 3.6.5 rather than with the generated build number after it.</Note>
-  </Release>
-  <Release Version="3.6.4" Published="2026-09-18">
-    <Note>Unit definitions, parameters and enumerations are published, so a new device type no longer needs a reinstall.</Note>
-  </Release>
-  <Release Version="3.6.3" Published="2026-09-17">
-    <Note>Fixed an update that reported itself as ready after every restart.</Note>
-    <Note>The Overview page replaces the dashboard: announcements, version and update status, and a link to the user manual.</Note>
-  </Release>
-  <Release Version="3.6.2" Published="2026-09-17">
-    <Note>Device firmware and language files are downloaded from the published catalogue instead of shipping inside the installer.</Note>
-  </Release>
-  <Release Version="3.6.1" Published="2026-09-15">
-    <Note>Added the IBWL3-02B and IBWL3-20B relays.</Note>
-    <Note>Added DALI-2 input device support.</Note>
   </Release>
 </ReleaseNotes>
