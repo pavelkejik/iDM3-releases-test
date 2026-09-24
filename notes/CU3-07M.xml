@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ReleaseNotes Model="CU3-07M" Source="CU3-07M - Firmware history.txt">
+  <Release Version="02.97.63">
+    <Note Lang="en">repaired Modbus-IP (UDP) master and slave data encoding</Note>
+    <Note Lang="en">repaired hang at start-up after a factory reset</Note>
+    <Note Lang="en">Modbus: slaves that reject 32-bit (two-register) reads or writes are handled by falling back to single-register requests</Note>
+    <Note Lang="en">network reliability fixes</Note>
+  </Release>
+  <Release Version="02.97.61">
+    <Note Lang="en">improved DALI-2 reliability (commissioning and bus collisions)</Note>
+    <Note Lang="en">add MQTT support for DALI-2 sensors</Note>
+  </Release>
+  <Release Version="02.97.60">
+    <Note Lang="en">DALI-2 input devices: first reliability fixes, completed in 02.97.61</Note>
+  </Release>
+  <Release Version="02.97.59">
+    <Note Lang="en">add DALI-2 multi-master support for input devices</Note>
+  </Release>
   <Release Version="02.97.56">
     <Note Lang="en">add status page to web configuration</Note>
   </Release>
@@ -101,9 +117,6 @@
   </Release>
   <Release Version="02.96.53">
     <Note Lang="en">fix bug with freez IP communication wiht IDM3</Note>
-  </Release>
-  <Release Version="02.96.50">
-    <Note Lang="en">fix bug with MQTT controling Heat/Cool</Note>
   </Release>
   <Release Version="02.96.50">
     <Note Lang="en">fix bug with MQTT controling Heat/Cool</Note>

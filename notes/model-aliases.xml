@@ -29,6 +29,8 @@
   <!-- Naming drift between the two sources -->
   <Alias Firmware="IBWL-02B"        Notes="IBWL3-02B" Confirmed="false" />
   <Alias Firmware="IBWL-20B"        Notes="IBWL3-20B" Confirmed="false" />
+  <Alias Firmware="IBWL-20B-RELAY"  Notes="IBWL3-20B" Confirmed="false" />
+  <Alias Firmware="IBWL-02B-RELAY"  Notes="IBWL3-02B" Confirmed="false" />
   <Alias Firmware="MCD3-01"         Notes="MCD3-1"    Confirmed="false" />
   <Alias Firmware="PMS3-01"         Notes="PMS3-1"    Confirmed="false" />
 

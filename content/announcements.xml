@@ -2,9 +2,10 @@
 
 <!-- Shown on the Overview page of every installed iDM3, newest first.
 
-     Edit this file on GitHub and the change reaches installations on their next launch.
-     No release, no reinstall, no version bump: committing to main republishes the
-     catalogue, and iDM3 picks it up.
+     Edit this file in a pull request like any other change. Once it is merged to main,
+     the release workflow puts the new catalogue on the staging feed, and it reaches
+     installations when someone runs the Publish workflow. No version bump is needed:
+     announcements are not part of a release.
 
      English only. Unlike the firmware notes there is no Lang attribute, because an
      announcement written in one language and shown to everyone is clearer than one that

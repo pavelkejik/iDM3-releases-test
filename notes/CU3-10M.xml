@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ReleaseNotes Model="CU3-10M" Source="CU3-10M - Firmware history.txt">
+  <Release Version="02.97.63">
+    <Note Lang="en">repaired Modbus-IP (UDP) master and slave data encoding</Note>
+    <Note Lang="en">repaired hang at start-up after a factory reset</Note>
+    <Note Lang="en">Modbus: slaves that reject 32-bit (two-register) reads or writes are handled by falling back to single-register requests</Note>
+    <Note Lang="en">network reliability fixes</Note>
+  </Release>
   <Release Version="02.97.56">
     <Note Lang="en">add status page to web configuration</Note>
   </Release>
