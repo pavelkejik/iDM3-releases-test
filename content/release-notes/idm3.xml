@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ReleaseNotes Product="iDM3">
+  <Release Version="3.6.8" Published="2026-09-24" Url="https://github.com/pavelkejik/iDM3-releases-test/releases/download/v3.6.8-rev0/IDM3_3.6.8_Rev0_Setup.exe">
+    <Note>The update catalogue and its signature are read from one file, so they always match, even in the minutes right after a release is published.</Note>
+    <Note>New firmware is offered from the release that brings it, together with the definitions it needs; older installations are offered the update of iDM3 instead.</Note>
+    <Note>The Overview shows the Firmware row only when published firmware is missing, with a Download button; every file is checked against the signed catalogue.</Note>
+    <Note>The update check says when no signed catalogue is published, instead of reporting that iDM3 is offline.</Note>
+    <Note>A build that is newer than the published release keeps its own firmware files instead of offering older published copies.</Note>
+  </Release>
   <Release Version="3.6.7" Published="2026-09-24" Url="https://github.com/pavelkejik/iDM3-releases-test/releases/download/v3.6.7-rev0/IDM3_3.6.7_Rev0_Setup.exe">
     <Note>A readable description is shown for every CU error code.</Note>
     <Note>Hidden objects are no longer shown by default; function block templates are saved to the project and new projects start from the default project.</Note>
