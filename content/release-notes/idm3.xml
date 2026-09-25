@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ReleaseNotes Product="iDM3">
+  <Release Version="3.6.12" Published="2026-09-25" Url="https://github.com/pavelkejik/iDM3-releases-test/releases/download/v3.6.12-rev0/IDM3_3.6.12_Rev0_Setup.exe">
+    <Note>Adding devices to Modbus, Modbus IP, maths and DALI-2 units no longer stops working after the preferences are changed.</Note>
+  </Release>
   <Release Version="3.6.11" Published="2026-09-25" Url="https://github.com/pavelkejik/iDM3-releases-test/releases/download/v3.6.11-rev0/IDM3_3.6.11_Rev0_Setup.exe">
     <Note>Test release, published through the releases app.</Note>
   </Release>

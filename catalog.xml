@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FirmwareCatalog Schema="2" Sequence="28" Generated="2026-09-25T07:23:36Z" ValidUntil="2027-03-24T07:23:36Z">
+<FirmwareCatalog Schema="2" Sequence="29" Generated="2026-09-25T11:47:09Z" ValidUntil="2027-03-24T11:47:09Z">
   <Item Component="Firmwares" Kind="Firmware" Model="A-IBUS-SLAVE" Version="02.08.00" Target="Firmwares\A-IBUS-SLAVE_02.08.00.zip" Source="firmwares/A-IBUS-SLAVE_02.08.00.zip" Size="23017" Sha256="67e27e62eaa67f26bd9e84bfd5935e34f0b708a50915f5e8ccaf5c49706928b6" Channel="Stable">
     <Note Lang="en">Bug fixes and improvements.</Note>
   </Item>
@@ -537,8 +537,11 @@
   <Item Component="Firmwares" Kind="Firmware" Model="WSB3-40-HUM" Version="04.02.00" Target="Firmwares\WSB3-40-HUM_04.02.00.zip" Source="firmwares/WSB3-40-HUM_04.02.00.zip" Size="22118" Sha256="0a958fe4f34eeb07b51da3e8b5468c71b4f6cc100cefa3d62600f2f7e2582da1" Channel="Stable">
     <Note Lang="en">Bug fixes and improvements.</Note>
   </Item>
-  <Item Component="Root" Kind="Content" Model="announcements.xml" Version="3.6.11" Target="announcements.xml" Source="content/announcements.xml" Size="1476" Sha256="f40c66546b48bebb7640e4ff8265b0e70120026359d99834c329678ad55b6a20" Channel="Stable" />
-  <Item Component="release-notes" Kind="Content" Model="release-notes/idm3.xml" Version="3.6.11" Target="release-notes\idm3.xml" Source="content/release-notes/idm3.xml" Size="6690" Sha256="8dd07f8908072ebd69fa7d2fec68324af0924b0fb333bdd98eb164846f5148ff" Channel="Stable" />
+  <Item Component="Root" Kind="Content" Model="announcements.xml" Version="3.6.12" Target="announcements.xml" Source="content/announcements.xml" Size="1476" Sha256="f40c66546b48bebb7640e4ff8265b0e70120026359d99834c329678ad55b6a20" Channel="Stable" />
+  <Item Component="release-notes" Kind="Content" Model="release-notes/idm3.xml" Version="3.6.12" Target="release-notes\idm3.xml" Source="content/release-notes/idm3.xml" Size="7004" Sha256="9f2cff9429bdcd8e2ec440ddb9066a35bbb89acc790c467ef20e672369507db3" Channel="Stable" />
+  <Release Version="3.6.12" Rev="0" Channel="Stable" Published="2026-09-25" Installer="https://github.com/pavelkejik/iDM3-releases-test/releases/download/v3.6.12-rev0/IDM3_3.6.12_Rev0_Setup.exe" Size="18484684" Sha256="ad89e3ecc960e2472a59c687d726634d105cef9acc23c7706d3a7f319e1e37e9">
+    <Note>Adding devices to Modbus, Modbus IP, maths and DALI-2 units no longer stops working after the preferences are changed.</Note>
+  </Release>
   <Release Version="3.6.11" Rev="0" Channel="Stable" Published="2026-09-25" Installer="https://github.com/pavelkejik/iDM3-releases-test/releases/download/v3.6.11-rev0/IDM3_3.6.11_Rev0_Setup.exe" Size="18485267" Sha256="0cf07e1dbcecb7023c406f2d1d3856039067e4839c7cebfbf079e66fe2084098">
     <Note>Test release, published through the releases app.</Note>
   </Release>
