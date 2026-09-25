@@ -1,6 +1,6 @@
-rfSkt9ROFLaI0vo6YN7t0pkxEr6LzIRjYfNi/Wo2D3vDh0Q7o7zfMhYXkDnfAPdoRxjqGXleQMANFWdMJUIMVhpdUfAcJd8yBypq3v/pX/xEla2D7L0nnP1LDgChBLaATqhbzN4gJgyec2624E9++oQPBxaiCovrGd2GLKxvql/DGmOVoHu5kmdTXQLZKjOL75oMjqRjeqId5Evsugf8qsuu7LLH4RBEWiUsvvJASDySdHKpSR5poaltOPLwWwToVZ/1f6RIwvDKmFikMwkauas/2mId2drRDR/5++Rp1lEBQa5dzfWzY9lKjGlg+Eq9TnheG4vNrMyp4OLZtQ/BijfJusCiEgGtD8JcXvjXyYGMile3vsOGK01fdPZXH63B/SZ/GLUwFm3M4dxWoEj+Qrk/HA9W/y0JE6OJihRcWdlKqdSccfDL/9dVUFctZMxGsV13vQrIs6jtjjaiU3jKYU8BztzrK8v0ZIbK2EmP7kVHBWqOIxmrJ/YyVSzYWY7l
+A47T0iwxJg8KanixE1pbp6YHULLcqRjC3T/+em/roXFLWJwGXvSDCY6X7vva5cFnA5O3G10VeczIUIW/6eObFBM0sIbuNJvF91uC/SqB+zz0jekPCz/64+VqlSg8XuroBFj21lEJV4ReR5rG6UdPNY0OaHthHUKCazapjUA55Z32nIzKso4t7p1nLdqGCapSPidQLv9Necj35bXKnAg/688McErirej2Kx+KVbHfyWTK9g4h+ogHRYDnsZuxZagZEiDvS7kOy85wer06bWslqc8qtzS91Rhzpsm1IJL/ndfppSW+mvT/MlRjU2BM58G1DOjsZvINFQDd9cwaWN+xTXppRlAM+hszY63G36i62512oxdwpi5SSJ00SV3MvPCpu5mOJdhcdRhy0rnll/dprtJvr26S6UN4is3FGp1zvDZkpAnVay5uo+9LQitrwfmTGv0MI4WbLXRRB5Q/WkyCAnppEjZS5NKs4R0tSL51usLGonfopYBCsMqjVgtfIehK
 <?xml version="1.0" encoding="utf-8"?>
-<FirmwareCatalog Schema="2" Sequence="27" Generated="2026-09-24T22:32:36Z" ValidUntil="2027-03-23T22:32:36Z">
+<FirmwareCatalog Schema="2" Sequence="28" Generated="2026-09-25T07:23:36Z" ValidUntil="2027-03-24T07:23:36Z">
   <Item Component="Firmwares" Kind="Firmware" Model="A-IBUS-SLAVE" Version="02.08.00" Target="Firmwares\A-IBUS-SLAVE_02.08.00.zip" Source="firmwares/A-IBUS-SLAVE_02.08.00.zip" Size="23017" Sha256="67e27e62eaa67f26bd9e84bfd5935e34f0b708a50915f5e8ccaf5c49706928b6" Channel="Stable">
     <Note Lang="en">Bug fixes and improvements.</Note>
   </Item>
@@ -538,8 +538,11 @@ rfSkt9ROFLaI0vo6YN7t0pkxEr6LzIRjYfNi/Wo2D3vDh0Q7o7zfMhYXkDnfAPdoRxjqGXleQMANFWdM
   <Item Component="Firmwares" Kind="Firmware" Model="WSB3-40-HUM" Version="04.02.00" Target="Firmwares\WSB3-40-HUM_04.02.00.zip" Source="firmwares/WSB3-40-HUM_04.02.00.zip" Size="22118" Sha256="0a958fe4f34eeb07b51da3e8b5468c71b4f6cc100cefa3d62600f2f7e2582da1" Channel="Stable">
     <Note Lang="en">Bug fixes and improvements.</Note>
   </Item>
-  <Item Component="Root" Kind="Content" Model="announcements.xml" Version="3.6.10" Target="announcements.xml" Source="content/announcements.xml" Size="1476" Sha256="f40c66546b48bebb7640e4ff8265b0e70120026359d99834c329678ad55b6a20" Channel="Stable" />
-  <Item Component="release-notes" Kind="Content" Model="release-notes/idm3.xml" Version="3.6.10" Target="release-notes\idm3.xml" Source="content/release-notes/idm3.xml" Size="6445" Sha256="731a6433dc1e91e8b4b21234c68ac21b06b3013bd264a1dda85f2361cb0dfda2" Channel="Stable" />
+  <Item Component="Root" Kind="Content" Model="announcements.xml" Version="3.6.11" Target="announcements.xml" Source="content/announcements.xml" Size="1476" Sha256="f40c66546b48bebb7640e4ff8265b0e70120026359d99834c329678ad55b6a20" Channel="Stable" />
+  <Item Component="release-notes" Kind="Content" Model="release-notes/idm3.xml" Version="3.6.11" Target="release-notes\idm3.xml" Source="content/release-notes/idm3.xml" Size="6690" Sha256="8dd07f8908072ebd69fa7d2fec68324af0924b0fb333bdd98eb164846f5148ff" Channel="Stable" />
+  <Release Version="3.6.11" Rev="0" Channel="Stable" Published="2026-09-25" Installer="https://github.com/pavelkejik/iDM3-releases-test/releases/download/v3.6.11-rev0/IDM3_3.6.11_Rev0_Setup.exe" Size="18485267" Sha256="0cf07e1dbcecb7023c406f2d1d3856039067e4839c7cebfbf079e66fe2084098">
+    <Note>Test release, published through the releases app.</Note>
+  </Release>
   <Release Version="3.6.10" Rev="1" Channel="Stable" Published="2026-09-24" Installer="https://github.com/pavelkejik/iDM3-releases-test/releases/download/v3.6.10-rev1/IDM3_3.6.10_Rev1_Setup.exe" Size="18485107" Sha256="e8cc4bceb5ae667d71572393009d7fa1e5ca9ec1bff3c7284ea237dc8679238c">
     <Firmware Model="CU3-07M" Version="02.97.64">
       <Note>repaired switching of bits and relays from iDM</Note>

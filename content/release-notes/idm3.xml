@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ReleaseNotes Product="iDM3">
+  <Release Version="3.6.11" Published="2026-09-25" Url="https://github.com/pavelkejik/iDM3-releases-test/releases/download/v3.6.11-rev0/IDM3_3.6.11_Rev0_Setup.exe">
+    <Note>Test release, published through the releases app.</Note>
+  </Release>
   <Release Version="3.6.10" Published="2026-09-24" Url="https://github.com/pavelkejik/iDM3-releases-test/releases/download/v3.6.10-rev1/IDM3_3.6.10_Rev1_Setup.exe">
     <Note>Firmware CU3-07M 02.97.64: repaired switching of bits and relays from iDM</Note>
     <Note>Firmware CU3-07M 02.97.64: repaired heat/cool area status and a restart in projects with astronomical, mathematical or hotel room modules</Note>
